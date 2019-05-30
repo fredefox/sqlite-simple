@@ -38,7 +38,7 @@ class GToRow f where
   gtoRow :: (f a) -> [SQLData]
 
 instance GToRow U1 where
-  gtoRow U1 = toRow ()
+  gtoRow U1 = mempty
 
 instance ToField a => GToRow (K1 i a) where
   gtoRow (K1 a) = pure $ toField a
